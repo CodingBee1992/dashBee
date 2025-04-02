@@ -12,7 +12,7 @@ const App = () => {
 				<div>
 					<Sidebar />
 				</div>
-				<div className='w-full p-4'>
+				<div className='w-full p-4 overflow-hidden'>
 					<Outlet />
 				</div>
 			</div>
