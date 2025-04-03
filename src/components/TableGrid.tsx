@@ -7,14 +7,14 @@ import trash from "../assets/svg/delete.svg"
 interface Props {
 	columns: GridColDef[]
 	rows: object[],
-  users:string
+  slug:string
 }
 
-const TableGrid = ({ columns, rows,users }: Props) => {
+const TableGrid = ({ columns, rows,slug }: Props) => {
 
-  const handleDelete =(id:number)=>{
+//   const handleDelete =(id:number)=>{
 
-  }
+//   }
 
 	const actionColumn: GridColDef = {
 		field: 'action',
@@ -22,7 +22,7 @@ const TableGrid = ({ columns, rows,users }: Props) => {
 		width: 200,
 		renderCell: params => (
 			<div className='flex gap-2'>
-				<Link to={`/dashBee/${users}/${params.row.id}`}>
+				<Link to={`/dashBee/${slug}/${params.row.id}`}>
 					<img src={view} alt="" />
 				</Link>
         <div onClick={()=> handleDelete(params.row.id)}>

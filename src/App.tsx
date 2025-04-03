@@ -5,7 +5,7 @@ import Sidebar from './components/Sidebar'
 
 const App = () => {
 	return (
-		<div className="text-[var(--main-color)] bg-[var(--main-bg)]">
+		<div className="relative text-[var(--main-color)] bg-[var(--main-bg)]">
 			<Navbar />
 
 			<div className='flex'>

@@ -1,6 +1,8 @@
 import { GridColDef } from "@mui/x-data-grid";
 import TableGrid from "../components/TableGrid"
 import { userRows } from "../data";
+import { useState } from "react";
+import Add from "../components/Add";
 
 const columns: GridColDef<(typeof userRows)[number]>[] = [
   { field: "id", headerName: "ID", width: 90 },
@@ -35,6 +37,7 @@ const columns: GridColDef<(typeof userRows)[number]>[] = [
     type: "string",
     headerName: "Phone",
     width: 200,
+    
   },
   {
     field: "createdAt",
@@ -52,13 +55,22 @@ const columns: GridColDef<(typeof userRows)[number]>[] = [
 
 
 const Users = () => {
+
+  const [open,setOpen]=useState(false)
+ 
+
+  const handleOpen = ()=>{
+    setOpen(!open)
+  }
+
   return (
     <div className="w-full">
-      <div>
-        <h1>Users</h1>
-        <button>Add New User</button>
+      <div className="flex items-center gap-4 mb-2">
+        <h1 className="text-2xl font-semibold">Users</h1>
+        <button onClick={()=>handleOpen()} className="px-4 py-1 text-[14px] text-black bg-gray-300 cursor-pointer hover:bg-gray-500 hover:text-white duration-300">Add New User</button>
       </div>
-      <TableGrid users="users" columns={columns} rows={userRows}/>
+      <TableGrid slug="users" columns={columns} rows={userRows}/>
+      {open && <Add slug="user" columns={columns} handleOpen={handleOpen}/>}
     </div>
   )
 }
