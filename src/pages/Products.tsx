@@ -70,7 +70,7 @@ const Products = () => {
 					Add New Product
 				</button>
 			</div>
-			<TableGrid slug="users" columns={columns} rows={products} />
+			<TableGrid slug="product" columns={columns} rows={products} />
 			{open && <Add slug="product" columns={columns} handleOpen={handleOpen} />}
 		</div>
 	)

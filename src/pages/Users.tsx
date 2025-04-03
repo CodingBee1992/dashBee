@@ -69,7 +69,7 @@ const Users = () => {
         <h1 className="text-2xl font-semibold">Users</h1>
         <button onClick={()=>handleOpen()} className="px-4 py-1 text-[14px] text-black bg-gray-300 cursor-pointer hover:bg-gray-500 hover:text-white duration-300">Add New User</button>
       </div>
-      <TableGrid slug="users" columns={columns} rows={userRows}/>
+      <TableGrid slug="user" columns={columns} rows={userRows}/>
       {open && <Add slug="user" columns={columns} handleOpen={handleOpen}/>}
     </div>
   )

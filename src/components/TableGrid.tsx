@@ -12,9 +12,9 @@ interface Props {
 
 const TableGrid = ({ columns, rows,slug }: Props) => {
 
-//   const handleDelete =(id:number)=>{
+  const handleDelete =(id:number)=>{
 
-//   }
+  }
 
 	const actionColumn: GridColDef = {
 		field: 'action',
