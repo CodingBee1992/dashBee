@@ -1,14 +1,15 @@
-import { useParams } from "react-router"
+
 import PageComponent from "../components/PageComponent"
+import { singleProduct } from "../data"
 
 
 const Product = () => {
 
-    const {id}= useParams()
+    
 
   return (
     <div>
-        <PageComponent id={id}/>
+        <PageComponent {...singleProduct}/>
     </div>
   )
 }

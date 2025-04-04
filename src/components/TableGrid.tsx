@@ -12,9 +12,10 @@ interface Props {
 
 const TableGrid = ({ columns, rows,slug }: Props) => {
 
-  const handleDelete =(id:number)=>{
+//   const handleDelete =(id:number)=>{
 
-  }
+//   }
+// onClick={()=> handleDelete(params.row.id)}
 
 	const actionColumn: GridColDef = {
 		field: 'action',
@@ -25,7 +26,7 @@ const TableGrid = ({ columns, rows,slug }: Props) => {
 				<Link to={`/dashBee/${slug}/${params.row.id}`}>
 					<img src={view} alt="" />
 				</Link>
-        <div onClick={()=> handleDelete(params.row.id)}>
+        <div >
           <img src={trash} alt="" />
         </div>
 			</div>

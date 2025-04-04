@@ -1,10 +1,11 @@
 import PageComponent from "../components/PageComponent"
+import { singleUser } from "../data"
 
 
 const User = () => {
   return (
     <div>
-        <PageComponent />
+        <PageComponent {...singleUser}/>
     </div>
   )
 }

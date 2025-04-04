@@ -1,13 +1,12 @@
 import { GridColDef } from '@mui/x-data-grid'
 import React from 'react'
-// import { Dispatch, SetStateAction } from "react"
+
 
 interface Props {
 	columns: GridColDef[]
-	// rows: object[]
+	
 	slug: string
-	// open:boolean
-	// setOpen: () => Dispatch<SetStateAction<boolean>>
+	
 	handleOpen: () => void
 }
 

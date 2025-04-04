@@ -43,3 +43,15 @@ a{
 		object-fit: cover;
 	} */
 }
+
+.list li::after{
+	content: '';
+	position: absolute;
+	top: 60%;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: #f45b69;
+}
