@@ -13,6 +13,7 @@ interface Props {
 }
 
 const PageComponent = ({ img, title, info, chart, activities }: Props) => {
+	
 	return (
 		<div className="grid grid-cols-2 w-full h-full">
 			<div className="flex flex-col gap-10 p-4 ">

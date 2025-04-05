@@ -1,18 +1,33 @@
 import { GridColDef } from '@mui/x-data-grid'
-import React from 'react'
-
+import { ChangeEvent, FormEvent} from 'react'
 
 interface Props {
 	columns: GridColDef[]
-	
-	slug: string
-	
-	handleOpen: () => void
-}
 
-const Add = ({ slug, columns, handleOpen }: Props) => {
-	const handleSubmit = (e: React.ChangeEvent<HTMLInputElement>) => {
+	slug: string
+	dataItem: object[]
+	handleOpen: () => void
+	postData: (slug: string, data: object[]) => void
+	handleChange:(e: ChangeEvent<HTMLInputElement>)=> void
+}
+// interface dataProps {
+// 	id:number,
+// 	img:string,
+// 	lastName:string,
+// 	firstName:string,
+// 	email:string,
+// 	phone:string,
+// 	createdAt:string,
+// 	verified:boolean
+// }
+
+const Add = ({ slug, columns,dataItem, handleOpen, postData, handleChange }: Props) => {
+	
+
+	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault()
+
+		postData(slug, dataItem)
 	}
 
 	return (
@@ -24,20 +39,23 @@ const Add = ({ slug, columns, handleOpen }: Props) => {
 					X
 				</span>
 				<h1 className="flex self-start text-2xl mb-4 text-(--soft-color)">Add new {slug}</h1>
-				<form onSubmit={() => handleSubmit} className="grid grid-cols-3 gap-4 p-4">
+				<form onSubmit={handleSubmit} className="grid grid-cols-3 gap-4 p-4">
 					{columns
 						.filter(item => item.field !== 'id' && item.field !== 'img')
 						.map((column, index) => (
 							<div key={index} className="flex flex-col gap-2">
 								<label htmlFor="">{column.headerName}</label>
 								<input
+									onChange={handleChange}
 									type={column.type}
 									placeholder={column.field}
 									className="p-1 bg-transparent text-white border-[1px] border-(--soft-color) rounded-[4px] outline-none"
 								/>
 							</div>
 						))}
-					<button className="col-start-2 px-6 py-1 text-white rounded-2xl bg-teal-400 hover:bg-teal-600 duration-300 cursor-pointer">
+					<button
+						type="submit"
+						className="col-start-2 px-6 py-1 text-white rounded-2xl bg-teal-400 hover:bg-teal-600 duration-300 cursor-pointer">
 						Send
 					</button>
 				</form>
